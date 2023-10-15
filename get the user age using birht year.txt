@@ -1,0 +1,47 @@
+using System;
+using System.Collections;
+
+class mainClass{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter your BirthYear");
+        string byStr = Console.ReadLine();
+        
+       if(int.TryParse(byStr , out int byIn))
+       {
+           if(byIn > 2000 && byIn < 2010)
+           {
+               Console.WriteLine("Your age is : "+ageClass.getAge(byIn));
+               Console.ReadLine();
+           }else{
+               valueP.print("I think you are too short or too big.!");
+               valueP.next();
+           }
+       }else{
+           valueP.print("The age you entered is wrong or not a valid age.!");
+           valueP.next();
+       }
+       
+       
+    }
+}
+
+class ageClass{
+    public static double getAge(int BirthYear)
+    {
+        int userAge = 2023 - BirthYear;
+        return userAge;
+    }
+}
+
+class valueP{
+    public static void print(string value)
+    {
+        Console.WriteLine(value);
+    }
+    
+    public static void next()
+    {
+        Console.ReadLine();
+    }
+}
